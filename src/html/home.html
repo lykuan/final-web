@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style/style.css">
+</head>
+
+
+<body>
+    <nav class="navigation">
+        <div class="logo__container"><span>logo</span></div>
+        <div class="nav">
+            <a href="#">home</a>
+            <a href="#homeTown">homeTown</a>
+            <a href="#myProfile">about</a>
+            <a href="#contact">contact me</a>
+        </div>
+
+
+        <div class="auth__group">
+            <button class="btn-text">login In</button>
+            <button class="btn-text btn-text-primary">sign up</button>
+        </div>
+    </nav>
+    <header class="header ">
+        <div class="glimpse">
+            <h1 class="heading u-margin-big">李宽的个人静态博客</h1>
+            <p class="text u-margin-small">这是一个以现代方式搭建的我的个人博客静态项目，项目非常精简但是运用到的技术和设计理念都是非常超前（搞笑）的,本项目采用原生手撸，不依靠第三方组件库，时间仓促，就形成了这个胚胎项目</p>
+            <p class="u-margin-small">are you ready?</p>
+        </div>
+
+    </header>
+
+    <div data-checked=false class="side__close">
+        <span></span><span></span><span></span>
+    </div>
+    <div class="side">
+
+        <div class="side__head">
+            <div class="avatar__container"><img src="../img/avar.jpg" alt="" class="avatar"></div>
+            <div class="name">lykuan</div>
+            <div class="description">
+                <span class="homeTown"></span>四川富顺<span class="disposition">安静</span><span class="hobby"></span>
+            </div>
+        </div>
+        <ul class="side__nav">
+            <li><a href="#">home</a></li>
+            <li><a href="#homeTown">homeTown</a></li>
+            <li><a href="#myProfile">about</a></li>
+            <li><a href="#contact">contact me</a></li>
+        </ul>
+    </div>
+
+
+    <main class="main">
+
+        <section class="main__homeTown hidden" id="homeTown">
+            <iframe src="./myHomeTown.html" frameborder="0" class="myHomeTown"></iframe>
+        </section>
+
+        <section class="main__myProfile hidden" id="myProfile">
+            <iframe src="./myProfile.html" title='profile' allowFullscreen frameborder="0" class="myProfile"></iframe>
+        </section>
+
+    </main>
+    <footer class="footer hidden" id="contact">
+        <video preload="auto" autoplay muted loop class="video__bg">
+            <source src="../video/waves.mp4" type="video/mp4">
+            your
+        </video>
+        <div class="use__skills">
+            <img src="../img/avar.jpg" alt="" class="avatar">
+            <p class="summary">
+                此次作业几乎都是静态的页面，这次作用全是手动实现没有借助任何插件，项目中用到的大多是css的技术，这次我采用了css的一个预处理器scss，因为在学习所以用来使用，编译到了一个文件里面css代码，css采用模块化组件化的思想写的代码，有一定的复用性，但是还不够好，css部分采用了float
+                position flex
+                grid等布局js部分很少，js部分主要采用了一点dom操作和事件监听（animationiteration完成轮播），IntersectionAPI异步观察dom来触发卡片的旋转，本来是打算做响应式的，但是因为开始时间较晚，时间上来不及，此次作业就做到这里哈哈哈！
+            </p>
+        </div>
+      
+    </footer>
+
+    <script src="../js/home.js"></script>
+</body>
+
+</html>

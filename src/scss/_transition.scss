@@ -1,0 +1,32 @@
+.ani-openSide {
+  & > span:first-child {
+    left: 14%;
+    transform: rotate(45deg);
+  }
+  & > span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+  }
+  & > span:last-child {
+    left: 14%;
+    transform: rotate(-45deg);
+  }
+}
+
+.ani-showSide {
+  left: 0 !important;
+  transform: translateX(0);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(5rem);
+}
+
+.cover_transform {
+  transform: rotateY(-180deg) !important;
+}
+.content_transform {
+  transform: rotateY(0) !important;
+}
+

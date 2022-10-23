@@ -1,0 +1,4 @@
+@use "sass:math";
+@function random() {
+  @return math.percentage(math.random()) ;
+}

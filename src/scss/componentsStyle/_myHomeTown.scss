@@ -1,0 +1,180 @@
+body{
+  color: $color-white;
+}
+.homeTown__container {
+  width: 100%;
+  min-height: 70rem;
+  // justify-content: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background: $color-white;
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    color: $color-second;
+    font-style: thin;
+  }
+
+  .homeTown__swiper {
+    width: 35rem;
+    height: 25rem;
+    margin: 6rem auto;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 400px;
+    animation: alternativeShow 2s infinite;
+    &:hover {
+      animation-play-state: paused;
+    }
+
+    @include eleList;
+
+    li:has(+ li.active),
+    li.active:first-child ~ li:last-child {
+      transform: translate3d(-30%, 0, -10rem);
+    }
+    li:first-child:has(~ li.active:last-child) {
+      transform: translate3d(30%, 0, -10rem);
+    }
+
+    li:has(+ li + li.active),
+    li.active:first-child ~ li:nth-last-child(2),
+    li.active:nth-child(2) ~ li:last-child {
+      transform: translate3d(-50%, 0, -15rem);
+    }
+    li:first-child:has(~ li.active:nth-last-child(2)),
+    li:nth-child(2):has(~ li.active:last-child) {
+      transform: translate3d(50%, 0, -15rem);
+    }
+    .active {
+      transform: translate3d(0, 0, 0);
+
+      & + li {
+        transform: translate3d(30%, 0, -10rem);
+
+        & + li {
+          transform: translate3d(50%, 0, -15rem);
+        }
+      }
+    }
+  }
+
+  .homeTown__description {
+    column-count: 2;
+    column-gap: 1rem;
+    margin: 2rem;
+    font-size: 1.4rem;
+    color: $color-black;
+    hyphens: auto;
+    line-height: 3rem;
+    background: rgba($color-white, 0.15);
+    backdrop-filter: blur(2rem);
+  }
+}
+
+.cards__container {
+  color: $color-black;
+  display: flex;
+  justify-content: space-evenly;
+  & .card:first-child > .card__slide-cover,
+  & .card:first-child > .card__slide-content .img__container {
+    background: url(../../img/light1.jpg);
+    @include bg-center;
+  }
+  & .card:nth-child(2) > .card__slide-cover,
+  & .card:nth-child(2) > .card__slide-content .img__container {
+    background: url(../../img/spec6.jpg);
+    @include bg-center;
+  }
+  & .card:last-child > .card__slide-cover,
+  & .card:last-child > .card__slide-content .img__container {
+    background: url(../../img/temple.jpg);
+    @include bg-center;
+  }
+
+  .card {
+    perspective: 140rem;
+    transition: all 0.3s;
+    background-color: transparent;
+    width: 30rem;
+    min-height: 40rem;
+
+    &__slide {
+      height: 50rem;
+      width: 30rem;
+      margin: 1rem;
+      transition: all 2s;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+      position: absolute;
+      border-radius: 4px;
+      box-shadow: 1rem 1rem 1rem $color-grey;
+      &-cover {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 60% center;
+        will-change: transform;
+        & span {
+          display: flex;
+          color: $color-white;
+          font-size: 2.5rem;
+          justify-content: center;
+          height: 100%;
+          align-items: center;
+        }
+      }
+      &-content {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 70% center;
+        transform: rotateY(180deg);
+
+        will-change: transform;
+        background-color: $color-white;
+        & ul li {
+          list-style: none;
+          color: $color-white;
+          padding: 2rem 5rem;
+          letter-spacing: 0.5rem;
+          & p {
+            text-align: center;
+          }
+          &:not(:last-child) {
+            border-bottom: 1px solid;
+            margin-bottom: 1rem;
+          }
+        }
+        .img__container {
+          width: 100%;
+          height: 40%;
+          // background: url(../../img/spec6.jpg);
+          @include bg-center;
+          clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .description {
+          padding: 0.8rem;
+          line-height: 1.5rem;
+          color: $color-primary;
+        }
+        .imgs {
+          img {
+            width: 30%;
+            height: 10rem;
+            // object-fit: contain;
+            margin: 0.5rem;
+          }
+        }
+      }
+    }
+
+    // &:hover > .card__slide-content {
+    //   transform: rotateY(0);
+    // }
+    // &:hover > .card__slide-cover {
+    //   transform: rotateY(-180deg);
+    // }
+  }
+}

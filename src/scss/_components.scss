@@ -1,0 +1,110 @@
+.btn {
+  outline: none;
+  width: 9rem;
+  min-height: 4rem;
+  background-color: $color-second;
+  color: $color-grey;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  padding: 2px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &-primary {
+    color: $color-white;
+    background: linear-gradient(to right, $color-gradient-1, $color-second);
+  }
+
+  &-light {
+    background-color: $color-white;
+    border: 1px solid;
+    color: $color-second;
+  }
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-white;
+    border: 1px solid;
+  }
+}
+
+.btn-text {
+  width: 6rem;
+  outline: none;
+  color: $color-second;
+  height: 3.5rem;
+  border: none;
+  cursor: pointer;
+  
+  position: relative;
+  &-primary {
+    color: $color-white;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, $color-gradient-1, $color-second);
+    cursor: pointer;
+    &:hover {
+      color: $color-second;
+      background: $color-white;
+      border-bottom: 1px solid $color-second;
+    }
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid $color-primary;
+    transition: all 0.5s;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0.2rem 0.2rem 0.2rem $color-grey;
+  }
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0.1rem 0.1rem 0.1rem $color-grey;
+  }
+}
+
+.side__close {
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  background: rgba($color-white, 0.35);
+  text-align: center;
+  backdrop-filter: blur(1rem);
+  appearance: none;
+  cursor: pointer;
+  bottom: 4rem;
+  left: 1rem;
+  z-index: 100000;
+  transition: left 0.7s;
+  // will-change: transform;
+
+  span {
+    display: block;
+    width: 80%;
+    height: 1px;
+    background: $color-second;
+    position: relative;
+    margin: 0 auto;
+    transition: all 0.2s;
+    &:first-child {
+      top: 25%;
+      transform-origin: top left;
+    }
+    &:nth-child(2) {
+      top: 50%;
+    }
+    &:last-child {
+      top: 75%;
+      transform-origin: bottom left;
+    }
+  }
+}

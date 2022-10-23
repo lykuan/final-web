@@ -1,0 +1,28 @@
+:root {
+  --dark-theme: #263237;
+  --light-theme: #f9f9f9;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: calc((10 / 16) * 100%);
+  box-sizing: border-box;
+  color: $color-white;
+  font-family: "open sans", "Operator Mono Lig Light", 仿宋;
+}
+
+a {
+  color: $color-white;
+  text-decoration: none;
+}
+img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+body {
+  background:$color-bg; 
+}

@@ -1,0 +1,15 @@
+@keyframes showSide {
+  from {
+    left: -20rem;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes alternativeShow {
+  to {
+    transform: translateZ(.1px);
+  }
+}
